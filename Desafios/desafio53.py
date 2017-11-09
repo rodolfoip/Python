@@ -1,8 +1,7 @@
 palavra = str(input('Digite um palavra: ')).lower()
-palavraP = palavra.replace(' ', '').replace(',','').replace('-','').replace('ô','o')
+palavraJunta = ''.join(palavra.split())
 palindromo = ''
-for c in range(len(palavraP), 0, -1):
-    palindromo = palindromo + palavraP[c - 1]
-print(palindromo)
-if palavraP == palindromo:
+for c in range(len(palavraJunta), 0, -1):
+    palindromo = palindromo + palavraJunta[c - 1]
+if palavraJunta == palindromo:
     print('A frase ou palavra "{}" é PALÍNDROMO'.format(palavra))
