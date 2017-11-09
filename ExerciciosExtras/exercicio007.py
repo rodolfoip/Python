@@ -14,9 +14,16 @@ carros = ['Fusca', 'Gol', 'Uno', 'Vectra', 'Peugeout']
 consumos = [7, 10, 12.5, 9, 14.5]
 distancia = 1000
 gasolina = 2.25
-
+menorConsumo = consumos[0]
+carroEconomico = ''
+for c in  range(0,len(carros)):
+    if consumos[c] > menorConsumo:
+        menorConsumo = consumos[c]
+        carroEconomico = carros[c]
 for c in range(0, len(carros)):
     litrosGastos = distancia / consumos[c]
     valorGasto = litrosGastos * gasolina
     print("""RELATORIO FINAL
-{} - {}           -    {} -  {:.2f} litros - R$ {:.2f}""".format(c + 1, carros[c], consumos[c], litrosGastos, valorGasto))
+{} - {}           -    {} -  {:.2f} litros - R$ {:.2f}""".format(c + 1, carros[c], consumos[c], litrosGastos,
+                                                                 valorGasto))
+print('O menor consumo foi do {}'.format(carroEconomico))
